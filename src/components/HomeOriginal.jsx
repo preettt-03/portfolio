@@ -1,50 +1,24 @@
-import React, { useState, useEffect } from 'react';
-//new arivel
-import HeroImage from "../assets/preet.png";
-import {MdOutlineKeyboardArrowRight } from "react-icons/md";
+import React from 'react';
+import HeroImage from "../assets/preet.png"
+import {MdOutlineKeyboardArrowRight } from "react-icons/md"
 import { Link } from 'react-scroll';
-
 const Home = () => {
-    const title = " Full Stack Developer";
-  const [displayedText, setDisplayedText] = useState('');
-  const [charIndex, setCharIndex] = useState(0);
-
-  useEffect(() => {
-    if (charIndex < title.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText(prev => prev + title[charIndex]);
-        setCharIndex(charIndex + 1);
-      }, 120); // Adjust the speed of typing here
-
-      return () => clearTimeout(timeout);
-    }
-    else {
-        // Restart the typing effect
-        const timeout = setTimeout(() => {
-          setDisplayedText('');
-          setCharIndex(0);
-        }, 2000); // Adjust the delay before restarting the typing effect
-  
-        return () => clearTimeout(timeout);
-      }
-  }, [charIndex, title]);
-
-
   return (
     <div name="home" className=' homeSection w-full bg-gradient-to-b from-black via-black to-gray-800'>
         
         <div className='max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row'> 
           
-            <div className='flex flex-col justify-center md:w-1/2'>
+            <div className='flex flex-col justify-center '>
                
                
-                <h2 className='text-4xl sm:text-6xl font-bold text-white min-h-[60px]'>
-                    I'm a  {displayedText}
+                <h2 className='text-4xl sm:text-6xl font-bold text-white'>
+                    I'm a Full Stack Developer
                 </h2>
 
 
-                <p className='text-gray-500 py-4 max-w-md'>
+                <p className='text-gray-500 py-4 max-w-md '>
                 I specialize in building dynamic and responsive web applications using modern technologies. With a deep understanding of both frontend and backend development, I create seamless and efficient user experiences. My skills include working with JavaScript, React, Node.js, and various databases, ensuring that your projects are both scalable and maintainable.
+
             </p>
 
                 <div>
@@ -58,7 +32,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className='md:w-1/3 self-end flex justify-end mt-8' >
+            <div >
                 <img  
                     src={HeroImage} 
                     alt="My profile"

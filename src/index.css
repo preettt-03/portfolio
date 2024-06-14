@@ -5,6 +5,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.homeSection{
+  height: 100vh;
+}
+@media screen and(max-width:600px){
+  .homeSection{
+    height: auto;
+  }
+  .portfolio{
+    padding-top: 135px;
+  }
+}
 
 @layer base{
   html {
